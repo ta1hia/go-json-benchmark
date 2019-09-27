@@ -1,11 +1,14 @@
 # go-json-benchmark
-Go JSON benchmark suite
-
-based on tests in https://github.com/miloyip/nativejson-benchmark
+Benchmark suite for JSON parsing and serialization. 
 
 ## Libraries
 
-list of libraries this tests
+Library | Notes
+--------|-------------------
+[encoding/json (aka 'std')](http://golang.org/pkg/encoding/json/) | 
+[easyjson](http://github.com/mailru/easyjson/) | 
+[ffjson](http://github.com/pquerna/ffjson/) | 
+[jsoniter](http://github.com/json-iterator/go/) | 
 
 ## Benchmarks
 
@@ -13,23 +16,22 @@ list of libraries this tests
 
 Benchmark      | Description
 ---------------|----------------------------------------------------
-Marshal        | Parse in-memory JSON into struct.
-Unmarshal      | Serialize struct into condensed JSON in memory.
-Prettify       | Serialize struct into prettified (with indentation and new lines) JSON in memory.
+Marshal        | Encode JSON data from a struct
+Unmarshal      | Decode JSON data into to a struct
+Prettify       | Encode JSON data from a struct into prettified JSON (with indentation and new lines)
 
-- run each benchmark for each dataset, if applicable
-- generic benchmark helpers in benchmark.go
+
+Each benchmark should be tested against each dataset. Generic benchmark helpers are defined in benchmark.go
 
 ### Datasets
 
-structs defined in data.go
+JSON file   | Size | Description
+------------|------|-----------------------
+`small.json` [source](https://github.com/tahia-khan/go-json-benchmark/blob/master/data/small.json) | 1KB | 
+`large.json` [source](https://github.com/miloyip/nativejson-benchmark/blob/master/data/citm_catalog.json) | 1687KB | A big benchmark file with indentation used in several Java JSON parser benchmarks.
+`canada.json` [source](https://github.com/miloyip/nativejson-benchmark/blob/master/data/canada.json) | 2199KB | Contour of Canada border in [GeoJSON](http://geojson.org/) format. Contains a lot of real numbers.
 
-small.json
-large.json
-canada.json (geodata)
-
-TODO filesizes + characteristics 
-
+These datasets were pulled from [nativejson-benchmark](https://github.com/miloyip/nativejson-benchmark)
 
 ## Adding new libraries for benchmarking
 
@@ -39,7 +41,4 @@ TODO filesizes + characteristics
 TODO
 - makefile
 - CI/CD
-- should i VC the generated files (eg data_easyjson.go, data_ffjson.go) or just include in make instructions?
-- should i make the datafixture vars globals rather than reading in each marshal test?
-- docstrings and comments
-- how to present data
+- data presentation
