@@ -40,21 +40,3 @@ func BenchmarkUnmarshalGeoDataPayloadByStandardJson(b *testing.B) {
 	result := GeoDataPayload{}
 	benchmarkUnmarshalGenericData(data, &result, json.Unmarshal, b)
 }
-
-func BenchmarkPrettyPrintSmallPayloadByStandardJson(b *testing.B) {
-	result := SmallPayload{}
-	GenerateObjectFromFile(JSON_FILE_SMALL, &result)
-	benchmarkPrettyPrintGenericData(result, json.MarshalIndent, b)
-}
-
-func BenchmarkPrettyPrintLargePayloadByStandardJson(b *testing.B) {
-	result := LargePayload{}
-	GenerateObjectFromFile(JSON_FILE_LARGE, &result)
-	benchmarkPrettyPrintGenericData(result, json.MarshalIndent, b)
-}
-
-func BenchmarkPrettyPrintGeoDataPayloadByStandardJson(b *testing.B) {
-	result := GeoDataPayload{}
-	GenerateObjectFromFile(JSON_FILE_GEODATA, &result)
-	benchmarkPrettyPrintGenericData(result, json.MarshalIndent, b)
-}

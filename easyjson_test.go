@@ -57,30 +57,3 @@ func BenchmarkUnmarshalGeoDataPayloadByEasyJson(b *testing.B) {
 		result.UnmarshalJSON(data)
 	}
 }
-
-func BenchmarkPrettyPrintSmallPayloadByEasyJson(b *testing.B) {
-	result := SmallPayload{}
-	GenerateObjectFromFile(JSON_FILE_SMALL, &result)
-	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
-		result.MarshalJSON()
-	}
-}
-
-func BenchmarkPrettyPrintLargePayloadByEasyJson(b *testing.B) {
-	result := LargePayload{}
-	GenerateObjectFromFile(JSON_FILE_LARGE, &result)
-	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
-		result.MarshalJSON()
-	}
-}
-
-func BenchmarkPrettyPrintGeoDataPayloadByEasyJson(b *testing.B) {
-	result := GeoDataPayload{}
-	GenerateObjectFromFile(JSON_FILE_GEODATA, &result)
-	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
-		result.MarshalJSON()
-	}
-}

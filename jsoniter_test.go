@@ -40,21 +40,3 @@ func BenchmarkUnmarshalGeoDataPayloadByJsoniter(b *testing.B) {
 	result := GeoDataPayload{}
 	benchmarkUnmarshalGenericData(data, &result, jsoniter.Unmarshal, b)
 }
-
-func BenchmarkPrettyPrintSmallPayloadByJsoniter(b *testing.B) {
-	result := SmallPayload{}
-	GenerateObjectFromFile(JSON_FILE_SMALL, &result)
-	benchmarkPrettyPrintGenericData(result, jsoniter.MarshalIndent, b)
-}
-
-func BenchmarkPrettyPrintLargePayloadByJsoniter(b *testing.B) {
-	result := LargePayload{}
-	GenerateObjectFromFile(JSON_FILE_LARGE, &result)
-	benchmarkPrettyPrintGenericData(result, jsoniter.MarshalIndent, b)
-}
-
-func BenchmarkPrettyPrintGeoDataPayloadByJsoniter(b *testing.B) {
-	result := GeoDataPayload{}
-	GenerateObjectFromFile(JSON_FILE_GEODATA, &result)
-	benchmarkPrettyPrintGenericData(result, jsoniter.MarshalIndent, b)
-}
