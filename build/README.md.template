@@ -33,15 +33,19 @@ These datasets were pulled from [nativejson-benchmark](https://github.com/miloyi
 
 ## Results
 
-Results of Marshal benchmarking. The average across all datasets is calculated.
+Results of Marshal benchmarking:
+
 Rank | Library | Performance
 -----|---------|---------
 $MarshalChart
 
-Results of Unmarshal benchmarking. The average across all datasets is calculated.
+Results of Unmarshal benchmarking:
+
 Rank | Library | Performance
 -----|---------|---------
 $UnmarshalChart
+
+The average across all datasets is calculated for each performance metric.
 
 ## Adding new libraries for benchmarking
 

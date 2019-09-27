@@ -33,21 +33,25 @@ These datasets were pulled from [nativejson-benchmark](https://github.com/miloyi
 
 ## Results
 
-Results of Marshal benchmarking. The average across all datasets is calculated.
-Rank | Library | Performance
------|---------|---------
-1|ffjson|134 ns/op
-2|easyjson|8096882 ns/op
-3|standardjson|17363459 ns/op
-4|jsoniter|17616206 ns/op
+Results of Marshal benchmarking:
 
-Results of Unmarshal benchmarking. The average across all datasets is calculated.
 Rank | Library | Performance
 -----|---------|---------
-1|ffjson|119 ns/op
-2|easyjson|14226573 ns/op
-3|jsoniter|17599822 ns/op
-4|standardjson|26144824 ns/op
+1 | ffjson | 134 ns/op
+2 | easyjson | 8059687 ns/op
+3 | jsoniter | 17446205 ns/op
+4 | standardjson | 17559226 ns/op
+
+Results of Unmarshal benchmarking:
+
+Rank | Library | Performance
+-----|---------|---------
+1 | ffjson | 119 ns/op
+2 | easyjson | 14199808 ns/op
+3 | jsoniter | 17481403 ns/op
+4 | standardjson | 26027146 ns/op
+
+The average across all datasets is calculated for each performance metric.
 
 ## Adding new libraries for benchmarking
 
@@ -55,5 +59,6 @@ Rank | Library | Performance
 - create each benchmark * each dataset - use the base benchmark helpers in benchmark.go if applicable 
 
 ## TODO
+- makefile
 - CI/CD
-- push README back for CD
+- data presentation

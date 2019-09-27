@@ -22,13 +22,13 @@ for line in lines:
 marshal = []
 rank = 1
 for lib, speed in sorted(marshal_avgs.items(), key=lambda kv:kv[1]):
-    marshal.append('{}|{}|{} ns/op'.format(rank,lib,int(speed/3)))
+    marshal.append('{} | {} | {} ns/op'.format(rank,lib,int(speed/3)))
     rank += 1
 
 unmarshal = []
 rank = 1
 for lib, speed in sorted(unmarshal_avgs.items(), key=lambda kv:kv[1]):
-    unmarshal.append('{}|{}|{} ns/op'.format(rank,lib,int(speed/3)))
+    unmarshal.append('{} | {} | {} ns/op'.format(rank,lib,int(speed/3)))
     rank += 1
 
 with open(os.path.join(BASE_PATH, 'README.md.template')) as f:
