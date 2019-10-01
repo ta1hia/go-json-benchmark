@@ -9,10 +9,10 @@ import (
 
 type StandardJson struct{}
 
-func (std *StandardJson) Marshal(v interface{}) ([]byte, error) {
+func (j *StandardJson) Marshal(v interface{}) ([]byte, error) {
 	return json.Marshal(v)
 }
-func (std *StandardJson) Unmarshal(b []byte, v interface{}) error {
+func (j *StandardJson) Unmarshal(b []byte, v interface{}) error {
 	return json.Unmarshal(b, v)
 }
 
