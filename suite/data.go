@@ -1,13 +1,13 @@
-package json_benchmark
+package suite
 
 import (
 	"encoding/json"
 	"io/ioutil"
 )
 
-var JSON_FILE_SMALL = "data/small.json"
-var JSON_FILE_LARGE = "data/large.json"
-var JSON_FILE_GEODATA = "data/canada.json"
+var JSON_FILE_SMALL = "../data/small.json"
+var JSON_FILE_LARGE = "../data/large.json"
+var JSON_FILE_GEODATA = "../data/canada.json"
 
 type SmallPayload struct {
 	Host     string `json:"host"`
