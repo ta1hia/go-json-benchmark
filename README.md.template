@@ -32,25 +32,12 @@ JSON file   | Size | Description
 These datasets were pulled from [nativejson-benchmark](https://github.com/miloyip/nativejson-benchmark). Data structs are defined in `data.go`.
 
 ## Results
-
-Results of Marshal benchmarking:
-
-Rank | Library | Performance
------|---------|---------
-1 | ffjson | 384 ns/op
-2 | easyjson | 12198524 ns/op
-3 | standardjson | 26149468 ns/op
-4 | jsoniter | 26556143 ns/op
-
-Results of Unmarshal benchmarking:
+{{range .}}
+Results of {{.Action}} benchmarking:
 
 Rank | Library | Performance
 -----|---------|---------
-1 | ffjson | 21619349 ns/op
-2 | easyjson | 24289292 ns/op
-3 | jsoniter | 27789030 ns/op
-4 | standardjson | 38626159 ns/op
-
+{{.Chart}}{{end}}
 The average across all datasets is calculated for each performance metric.
 
 ## Adding new libraries for benchmarking
