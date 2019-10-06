@@ -3,6 +3,7 @@ module github.com/tahia-khan/go-json-benchmark
 go 1.13
 
 require (
+	github.com/bet365/jingo v0.9.0
 	github.com/bitly/go-simplejson v0.5.0
 	github.com/json-iterator/go v1.1.7
 	github.com/mailru/easyjson v0.7.0

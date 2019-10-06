@@ -1,3 +1,5 @@
+github.com/bet365/jingo v0.9.0 h1:L0VBdiYiA8ooKzbpGmFv/twg1ptSXX5VLLms9Wd8pBU=
+github.com/bet365/jingo v0.9.0/go.mod h1:YVo0ML7j7ob+mvgmOXoZHcGu99n2HJQXw2VqkTteF3I=
 github.com/bitly/go-simplejson v0.5.0/go.mod h1:cXHtHw4XUPsvGaxgjIAn8PhEWG9NfngEKAMDJEczWVA=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

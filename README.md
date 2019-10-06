@@ -9,6 +9,7 @@ Library | Notes
 [easyjson](http://github.com/mailru/easyjson/) | Generates parser methods structs defined in `<data_file>.go`. Testing MarshalJSON/UnmarshalJSON.
 [ffjson](http://github.com/pquerna/ffjson/) | Generates parser methods structs defined in `<data_file>.go`. Testing MarshalFast/UnmarshalFast
 [jsoniter](http://github.com/json-iterator/go/) | Testing Marshal/Unmarshal.
+[jingo](http://github.com/bet365/jingo/) | Testing Marshal (no Unmarshal). Requires initializing an encoder per struct/slice that should be marshaled. Currently does not marshal maps.
 
 ## Benchmarks
 
@@ -37,19 +38,20 @@ Results of Marshal benchmarking:
 
 Rank | Library | Performance
 -----|---------|---------
-1 | ffjson | 384 ns/op
-2 | easyjson | 12198524 ns/op
-3 | standardjson | 26149468 ns/op
-4 | jsoniter | 26556143 ns/op
+1 | jingo | 326 ns/op
+2 | ffjson | 327 ns/op
+3 | easyjson | 12379009 ns/op
+4 | standardjson | 26374413 ns/op
+5 | jsoniter | 26768552 ns/op
 
 Results of Unmarshal benchmarking:
 
 Rank | Library | Performance
 -----|---------|---------
-1 | ffjson | 21619349 ns/op
-2 | easyjson | 24289292 ns/op
-3 | jsoniter | 27789030 ns/op
-4 | standardjson | 38626159 ns/op
+1 | easyjson | 20851164 ns/op
+2 | ffjson | 21516266 ns/op
+3 | jsoniter | 27719141 ns/op
+4 | standardjson | 39032163 ns/op
 
 The average across all datasets is calculated for each performance metric.
 
@@ -62,3 +64,4 @@ The average across all datasets is calculated for each performance metric.
 - makefile
 - CI/CD
 - data presentation
+- benchmark for libs that support field querying rather than converting to/from predefined struct
