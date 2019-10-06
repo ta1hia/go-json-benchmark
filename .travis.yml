@@ -7,7 +7,5 @@ sudo: false
 install: true
 script:
   - go build
-  - easyjson -all suite/data.go
-  - ffjson suite/data.go
   - go test -bench=. ./... -benchmem
 
