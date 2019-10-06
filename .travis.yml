@@ -1,7 +1,13 @@
 language: go
 go:
   - 1.13.x
-
+os:
+  - linux
+sudo: false
+install: true
 script:
-  - make benchmark
+  - go build
+  - easyjson -all suite/data.go
+  - ffjson suite/data.go
+  - go test -bench=. ./... -benchmem
 
