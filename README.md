@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tahia-khan/go-json-benchmark.svg?branch=master)](https://travis-ci.org/tahia-khan/go-json-benchmark)
+
 # go-json-benchmark
 Benchmark suite for JSON parsing and serialization. 
 
